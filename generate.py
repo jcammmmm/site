@@ -44,7 +44,7 @@ def deploy_project_assets(pproject):
     if (src).is_file():
       shutil.copy(src, dst)
     else:
-      shutil.copytree(src, dst)
+      shutil.copytree(src, dst, dirs_exist_ok=True)
       
 
 """
