@@ -1,0 +1,73 @@
+{
+  "pprojects": [
+    {
+      "name": "multiform-cv",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "README.md",
+        "cv"
+      ]
+    },
+    {
+      "name": "utils",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "README.md"
+      ]
+    },
+    {
+      "name": "neatposts",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "README.md"
+      ]
+    },
+    {
+      "name": "semiinfinite-programming-chebyshev",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "chebyshev.md"
+      ]
+    },
+    {
+      "name": "stl-reader",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "README.md"
+      ]
+    },
+    {
+      "name": "thocsments",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "README.md"
+      ],
+      "pprojects": [
+        {
+          "name": "an-intro-to-oop",
+          "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+          "assets": [
+            "an-intro-to-oop.md"
+          ]
+        },
+        {
+          "name": "an-intro-to-programming",
+          "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+          "assets": [
+            "an-intro-to-programming.md"
+          ],
+          "pprojects": [
+            {
+              "name": "OUTRO FINALE",
+              "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+              "assets": [
+                "an-intro-to-oop.md"
+              ]
+            }
+          ]
+
+        }
+      ]
+    }
+  ]
+}
