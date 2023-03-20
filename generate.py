@@ -21,15 +21,23 @@ def main():
 
   pproject = args.only_this
   if (pproject):
-    deploy_project_documents(pproject)
+    deploy_project_assets(pproject)
     
-def deploy_project_documents(pproject):
-  pprojpath = Path('..')/pproject
-  docs = PPROJ_DESCR.get(pproject).get(docs)
-  # os.chdir(pprojpath)
-  # print(os.listdir())
-  for d in docs:
-    shutil.copyfile(pprojpath/d, PPROJ_DPLOY/pproject/d)
+def deploy_project_assets(pproject):
+  pprojpath = Path(PPROJ_ORIGN)/pproject
+  assets = PPROJ_DESCR.get(pproject).assets
+  print(os.listdir())
+  if not (PPROJ_DPLOY/pproject).exists():
+    os.makedirs(PPROJ_DPLOY/pproject)
+
+  for a in assets:
+    src = pprojpath/a
+    dst = PPROJ_DPLOY/pproject/a
+    if (src).is_file():
+      shutil.copy(src, dst)
+    else:
+      shutil.copytree(src, dst)
+      
 
 """
 Reads the pprojdescriptor.json file in order to retrieve information about the main
@@ -78,6 +86,14 @@ class PProject:
   def __repr__(self):
     return self.__str__()
   
+  def get(self, pprojname):
+    pproj = None
+    for p in self.pprojects:
+      if p.name == pprojname:
+        return p
+      pproj = p.get(pprojname)
+    return pproj
+  
   def build_pproject_tree(jsondescriptor):
     root = PProject('rootproject', 'this is a root project that points to other projects', [])
     pprojdescriptor = open(jsondescriptor, 'r', encoding='utf-8').read()
@@ -105,9 +121,9 @@ class PProjectEncoder(json.JSONEncoder):
     return o.__dict__
 
 if __name__ == '__main__':
-    PPROJ_DESCR = parse_project_descriptor()
     PPROJ_DPLOY = Path('./site')
     PPROJ_DESCR = PProject.build_pproject_tree('pprojdescriptor.json')
-    print(json.dumps(PPROJ_DESCR, cls=PProjectEncoder, indent=4))
-    # print(str(PPROJ_DESCR))
-    # main()
+    # relative to this script
+    PPROJ_ORIGN = '..'
+    # print(json.dumps(PPROJ_DESCR, cls=PProjectEncoder, indent=4))
+    main()
