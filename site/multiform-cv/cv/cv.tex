@@ -1,0 +1,362 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.8 (13/04/2022)
+%
+% Original author:
+% Debarghya Das ( )
+% 
+% Devs. and mods.
+% Juan Camilo Florez
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{CV-JuanCamiloFlorez}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Juan Camilo}{Flórez Vanegas}{ \urlstyle{same}
+    \href{mailto:mypersonal@email.com}{mypersonal@email.com} 
+    | \href{https://https://jcamilo.co}{https://jcamilo.co}
+    | +99 333 222 44 55
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[t]{0.33\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education} 
+\subsection{Universidad Nacional}
+\subsection{de Colombia}
+\descript{Bs. Computer Science}
+\location{2016 - 2023  | Bogotá}
+\location{Cum. GPA: 4.3 / 5.0}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SOCIAL NETWORKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Links}
+    LinkedIn:// \href{https://www.linkedin.com/in/vanjflores/}{\bf VanJFlorez} \\
+    GitHub:// \href{https://github.com/jcammmmm}{\bf VanJFlorez} \\
+    GitLab:// \href{https://gitlab.com/VanJFlorez}{\bf VanJFlorez} \\
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     CERTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Certs}
+-- \textbf{\href{https://jcamilo.co/IELTS-2022.pdf}{B2 English Certification (IELTS)}} \\
+-- \textbf{\href{https://www.efset.org/cert/j8ebfw}{C1 English Certification (EF)}} \\
+-- \textbf{\href{https://www.coursera.org/account/accomplishments/certificate/8MS64GGYWDT5?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate}{Machine Learning with Big Data}} \\
+-- \textbf{\href{https://www.coursera.org/account/accomplishments/certificate/KFN2XJC2KP92?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate}{Convolutional Neural Networks}} \\
+-- \textbf{\href{https://www.udemy.com/certificate/UC-ZHLLMBQA}{Automate Stuff with Python}} \\
+-- Econometrics (University) \\
+-- Micro and Macroeconomics (University) \\
+-- Economic History (University) \\
+\smallskip
+\scriptsize{* Some entries are linked to the certificates.}
+\sectionsep
+
+%{\footnotesize \textit{\textbf{(see github) }}} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Skills}
+\locationbold{Programming Languages}
+    \textbullet{} Java
+    \textbullet{} C /++
+    \textbullet{} Javascript
+    \textbullet{} TypeScript
+    \textbullet{} SQL
+    \textbullet{} CSS
+    \textbullet{} Python
+    \textbullet{} Ruby
+    \textbullet{} Bash
+    \textbullet{} Batch
+
+\locationbold{Frameworks/SDK/Libraries}
+    \textbullet{} Spring Boot
+    \textbullet{} Quarkus
+    \textbullet{} RubyOnRails
+    \textbullet{} Django
+    \textbullet{} EJB JSF JPA (Hibernate) PrimeFaces
+    \textbullet{} React/Material-UI
+    \textbullet{} Bootstrap
+    \textbullet{} Android SDK
+    \textbullet{} NumPy
+    \textbullet{} Scikit-Learn
+    \textbullet{} Pandas
+    \textbullet{} Boost C++
+    \textbullet{} KNIME
+    \textbullet{} Spark
+
+\locationbold{Tools/Protocols}
+    \textbullet{} Git
+    \textbullet{} Kubernetes
+    \textbullet{} Azure
+    \textbullet{} Docker
+    \textbullet{} ElasticSearch
+    \textbullet{} Jaeger
+    \textbullet{} OpenShift
+    \textbullet{} Azure DevOps
+    \textbullet{} Apache Flink
+    \textbullet{} Apache Kafka
+    \textbullet{} Apache Flume
+    \textbullet{} Apache Camel
+    \textbullet{} JUnit
+    \textbullet{} JMS
+    \textbullet{} Mockito
+    \textbullet{} Visual Studio
+    \textbullet{} Tensorflow
+    \textbullet{} SOAP UI
+    \textbullet{} GNU-Linux
+    \textbullet{} MongoDB
+    \textbullet{} Oracle Database 11g
+    \textbullet{} SQLite
+    \textbullet{} PostgreSQL
+    \textbullet{} MySQL
+    \textbullet{} Power Designer
+    \textbullet{} Virtual Box
+    \textbullet{} Linux Servers
+    \textbullet{} Audacity
+    \textbullet{} Moodle
+    \textbullet{} Maven
+    \textbullet{} Gradle
+    \textbullet{} SSH clients
+    \textbullet{} Heroku
+    \textbullet{} Jenkins
+    \textbullet{} Google Compute Engine
+    \textbullet{} TortoiseSVN
+    \textbullet{} \LaTeX
+
+\locationbold{Architectures/Methodologies}
+    \textbullet{} Microservices
+    \textbullet{} REST
+    \textbullet{} Web Services
+    \textbullet{} SOAP
+    \textbullet{} DevOps (Azure)
+    \textbullet{} Pipelining
+    \textbullet{} Scrum
+    \textbullet{} Good Practices (SOLID, Modularity, Design Patterns)
+
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     ABOUT ME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Profile}
+Computer Systems Engineer with 5 years of experience in Software Engineering and Development.  Professional with proficient skills in Mathematics, Software Development, Software Architecture  and Software Design. Highly motivated by reaching goals and measurements. Agile learner. Up-to-date  with State of the Art in software construction and implementation techniques. He is an Engineer  committed with organizations mission statements, with a great sense of responsibility, commitment  and good teamwork. Can speak English and Portuguese. 
+
+
+% inteligencia artificial %
+% análisis de información %
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Recent Experience}
+    \runsubsection{Optum}
+    \focusareas{Root Cause Analysis / Software Development and Maintenance / SQL Analysis and optimization}
+    \descript{Manager Software Engineer}
+    \location{
+        Oct 2022 - Current |
+                \includegraphics[width=12pt]{flag-usa.png}
+                United States (remote)    }
+    \textit{(Tools/Tech. stack) SQL, Java EE 8, Spring Boot, Java Server Pages, JavaScript, Python} \\
+        - Found and fix bugs in Optum Financial application core (Root Cause Analysis). \\
+        - Advanced SQL analysis and engineering. \\
+        - Full stack development; from SQL DDL/DML to JavaScript frontend code. \\
+        - Write software documentation. \\
+        - Debugging and patching 15+ year old application. \\
+        \sectionsep
+
+    \runsubsection{Credera}
+    \focusareas{Stream Processing / Microservices / Computer Graphics}
+    \descript{Senior Java Software Developer}
+    \location{
+        Nov 2021 - Oct 2022 |
+                \includegraphics[width=12pt]{flag-usa.png}
+                United States (remote)    }
+    \textit{(Tools/Tech. stack) C/C++, Blender, Kafka, Java 11, AWS, Postgres, Spring Boot, Kubernetes} \\
+        - Re-implementation of Java7 legacy \textit{monoliths} to Java11 \textit{microservices}. \\
+        - Write several \textit{Kafka} consumer-producers for the user-engagement streaming pipelines. \\
+        - Blender (C/C++) source code reverse engineering in order to understand and replicate Ghost UI for desktop applications. \\
+        - Build scripting with CMake. \\
+        - Develop a complete template file for work with Vulkan (C/C++) API. \\
+        - Microservices development with Spring Boot. \\
+        - Custom libraries development for microservices and ERP processing units that share the same business logic. \\
+        - Member of DE\&I committee (marketing pillar). \\
+        \sectionsep
+
+    \runsubsection{Claro}
+    \focusareas{BigData Processing / Microservices}
+    \descript{Java Software Developer}
+    \location{
+        Feb 2020 - Nov 2021 |
+                \includegraphics[width=12pt]{flag-brazil.png}
+                Brazil (remote)    }
+    \textit{(Tools/Tech. stack) Java 11, Apache Flume - Flink - Kafka - Camel, MongoDB, Spring Boot, OpenShift} \\
+        - Microservices development with Spring Boot, Quarkus and Django. Some examples can be seen \textbf{\href{https://github.com/VanJFlorez/flink-kafka-fraud-detection}{here}}. \\
+        - Big Data processing components using Apache Kafka, Flink, Flume and Camel. \\
+        - Batch Scripts and Java programs to automate Docker images builds and storage within Docker Hub cloud registry. \\
+        - Deployments in Openshift Container Platform pre-production environments. This includes scripts for builds and image stress tests. \\
+        - Provide mentorship for Junior and entry-level developers. \\
+        - Take part as technical expert in 'MiClaro App' UI enhancements project. \\
+        \sectionsep
+
+    \runsubsection{Zyos}
+    \focusareas{Backend Monolith Developer / Server Side UI Rendering}
+    \descript{FullStack Software Developer}
+    \location{
+        Jan 2019 - Feb 2020 |
+                \includegraphics[width=12pt]{flag-colombia.png}
+                Colombia     }
+    \textit{(Tools/Tech. stack) EJB, JSF, Primefaces, JPA (Hibernate), Angular 9, JavaScript (ES6), Maven, Git, Apache TomCat} \\
+        - Made improvements to \textit{Edificios Davivienda} App business core features. \\
+        - Responsive front-end implementation and some styling improvements. Several JavaScript components (notifications, ratings, snackbars) to improve the user experience. \\
+        - Backend software development to \textit{Mi Vivienda BCP} App in order to boost and correct bugs in execution edge cases. New functionalities to the overall application. \textit{Edificios Davivienda} available \textbf{\href{https://www.edificiosdavivienda.com}{here}} and \textit{Mi Vivienda BCP} available \textbf{\href{https://www.miviviendabcp.com.bo}{here}}. \\
+        \sectionsep
+
+    \runsubsection{Centro de Pensamiento UNAL}
+    \focusareas{}
+    \descript{Software Engineer}
+    \location{
+        Jun 2018 - Dec 2018 |
+                Bogotá     }
+    \textit{(Tools/Tech. stack) Ruby, RubyOnRails, NGinX, PostgresSQL, Debian-Linux, Moodle, PHP, SSH, Heroku, Google Compute Engine, Git, Docker, Rancker} \\
+        - Online course implementation with Moodle (available \textbf{\href{https://gitlab.com/VanJFlorez/animal_modeling_ethics/tree/master/docs/4 LMS build}{here}}) and a forum web application for that course with Thredded (available \textbf{\href{https://gitlab.com/VanJFlorez/animal_modeling_ethics/blob/master/docs/3\%20Social\%20WebApp/CP\%20etica\%20animal\%20webApp.pdf}{here}}). Full repository \textbf{\href{https://gitlab.com/VanJFlorez/animal_modeling_ethics/}{here}}. \\
+        \sectionsep
+
+    \runsubsection{Grupo Sepro}
+    \focusareas{}
+    \descript{Software Developer}
+    \location{
+        Jan 2018 - Jun 2018 |
+                Bogotá     }
+    \textit{(Tools/Tech. stack) Python, Django, JavaScript, ExpressJS, Gunicorn, Apache HTTP Server, Git, VSCode, MySQL, Heroku} \\
+        - Designed and implemented a survey information system that computes statistics and measurements. This survey system was used to evaluate the behavior and performance of Avocado and Sugar Cane derivatives supply chains from Cauca to Bogota. \\
+        - Coordinated a team of 3 undergraduate students to achieve the project goals. Two of them worked in software development and the another one work in QA. Available \textbf{\href{https://gitlab.com/VanJFlorez/sepro-webapp}{here}}. \\
+        \sectionsep
+
+ 
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH / PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{Proyectos / Investigación}
+
+%\runsubsection{PostConsumeUN - Aplicación Web} \\
+%\descript{Proyecto de Curso} 
+%\location{Feb 2018 – May 2018}
+%Aplicación Web orientada a Microservicios. Usa las tecnologías de Docker, Rancher, RubyOnRails y GraphQL en el servidor. Usa proxy inverso. Disponible \textbf{\href{https://github.com/VanJFlorez/sa_academy_api}{aquí.}} Posee clientes Android (disponible \textbf{\href{https://gitlab.com/VanJFlorez/pcun_ma}{aquí.}} y de navegador web.
+%\sectionsep
+
+%\runsubsection{Implementación de algoritmo para tesis doctoral} %\\
+%\descript{Asistente de Investigación}
+%\location{Nov 2017 – Dec 2017}
+%Trabajé con el profesor %\textbf{\href{https://juanmendivelso.com/}{Juan Mendivelso}} %implementando el algoritmo principal de su trabajo de %investigación doctoral ”The Graph Pattern Matching Problem %through Parametrized Matching”. Disponible %\textbf{\href{https://www.microsoft.com/en-us/research/wp-content%/uploads/2016/02/graphisomorphism.spire2013.pdf}{aquí.}}
+%\sectionsep
+
+%\runsubsection{Oxygen - Web Application} \\
+%\descript{Course Project}
+%\location{Aug 2017 – Nov 2017}
+%Main project course. Available \textbf{\href{https://github.com/}{Here.}}
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Awards} 
+%\begin{tabular}{rll}
+%\end{tabular}
+%\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Publications} 
+%\renewcommand\refname{\vskip -1.5em} % Couldn't get this working from the .cls file
+%\bibliographystyle{abbrv}
+%\bibliography{publications}
+\nocite{*}
+
+\end{minipage} 
+\end{document}  \documentclass[]{article}

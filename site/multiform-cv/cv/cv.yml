@@ -1,0 +1,327 @@
+name: Juan Camilo
+lastname: Flórez Vanegas
+webpage: https://jcamilo.co
+profile: >
+  Computer Systems Engineer with 5 years of experience in Software Engineering and Development. 
+  Professional with proficient skills in Mathematics, Software Development, Software Architecture 
+  and Software Design. Highly motivated by reaching goals and measurements. Agile learner. Up-to-date 
+  with State of the Art in software construction and implementation techniques. He is an Engineer 
+  committed with organizations mission statements, with a great sense of responsibility, commitment 
+  and good teamwork. Can speak English and Portuguese. 
+experience:
+  - name: Optum
+    url: https://www.optum.com/financial-services.html
+    focusAreas: 
+      - Root Cause Analysis
+      - Software Development and Maintenance
+      - SQL Analysis and optimization
+    jobTitle: Manager Software Engineer
+    period:
+      from: 2022-10-03
+      to: 2999-12-31
+    location:
+      country: United States
+      flagFileName: flag-usa.png
+      remote: True
+    tools: [SQL, Java EE 8, Spring Boot, Java Server Pages, JavaScript, Python]
+    tasks:
+      - descr: Found and fix bugs in Optum Financial application core (Root Cause Analysis).
+      - descr: Advanced SQL analysis and engineering.
+      - descr: Full stack development; from SQL DDL/DML to JavaScript frontend code.
+      - descr: Write software documentation.
+      - descr: Debugging and patching 15+ year old application.
+  - name: Credera
+    url: https://www.credera.com/
+    focusAreas: 
+      - Stream Processing
+      - Microservices
+      - Computer Graphics
+    jobTitle: Senior Java Software Developer
+    period: 
+      from: 2021-11-01
+      to: 2022-10-03
+    location:
+      country: United States 
+      flagFileName: flag-usa.png
+      remote: True
+    tools: [C/C++, Blender, Kafka, Java 11, AWS, Postgres, Spring Boot, Kubernetes]
+    tasks:
+      - descr: Re-implementation of Java7 legacy monoliths to Java11 microservices.
+        italics: 
+          - monoliths
+          - microservices
+      - descr: Write several Kafka consumer-producers for the user-engagement streaming pipelines.
+        italics:
+          - Kafka
+      - descr: Blender (C/C++) source code reverse engineering in order to understand and replicate Ghost UI for desktop applications.
+      - descr: Build scripting with CMake.
+      - descr: Develop a complete template file for work with Vulkan (C/C++) API.
+      - descr: Microservices development with Spring Boot.
+      - descr: Custom libraries development for microservices and ERP processing units that share the same business logic.
+      - descr: Member of DE\&I committee (marketing pillar).
+  - name: Claro
+    url: https://www.claro.com.co/institucional/
+    focusAreas: 
+      - BigData Processing
+      - Microservices
+    jobTitle: Java Software Developer
+    period: 
+      from: 2020-02-01
+      to: 2021-11-30
+    location:
+      country: Brazil 
+      flagFileName: flag-brazil.png
+      remote: True
+    tools: [Java 11, Apache Flume - Flink - Kafka - Camel, MongoDB, Spring Boot, OpenShift]
+    tasks:
+      - descr: Microservices development with Spring Boot, Quarkus and Django. Some examples can be seen HERE.
+        heres:
+          - https://github.com/VanJFlorez/flink-kafka-fraud-detection
+      - descr: Big Data processing components using Apache Kafka, Flink, Flume and Camel.
+      - descr: Batch Scripts and Java programs to automate Docker images builds and storage within Docker Hub cloud registry.
+      - descr: Deployments in Openshift Container Platform pre-production environments. This includes scripts for builds and image stress tests.
+      - descr: Provide mentorship for Junior and entry-level developers.
+      - descr: Take part as technical expert in 'MiClaro App' UI enhancements project.
+  - name: Zyos
+    url: https://neivor.com
+    focusAreas: 
+      - Backend Monolith Developer
+      - Server Side UI Rendering
+    jobTitle: FullStack Software Developer
+    period: 
+      from: 2019-01-01
+      to: 2020-02-28
+    location:
+      country: Colombia 
+      flagFileName: flag-colombia.png
+      remote: False
+    tools: [EJB, JSF, Primefaces, JPA (Hibernate), Angular 9, JavaScript (ES6), Maven, Git, Apache TomCat]
+    tasks:
+      - descr: Made improvements to Edificios Davivienda App business core features.
+        italics:
+          - Edificios Davivienda
+      - descr: Responsive front-end implementation and some styling improvements. Several JavaScript components (notifications, ratings, snackbars) to improve the user experience.
+      - descr: Backend software development to Mi Vivienda BCP App in order to boost and correct bugs in execution edge cases. New functionalities to the overall application. Edificios Davivienda available HERE and Mi Vivienda BCP available HERE.
+        heres:
+          - https://www.edificiosdavivienda.com
+          - https://www.miviviendabcp.com.bo
+        italics:
+          - Mi Vivienda BCP
+          - Edificios Davivienda
+  - name: Centro de Pensamiento UNAL
+    url: http://pensamiento.unal.edu.co/cp-eticaanimal/
+    jobTitle: Software Engineer
+    period:
+      from: 2018-06-30
+      to: 2018-12-31
+    location:
+      country: Bogotá
+      remote: False
+    tools: [Ruby, RubyOnRails, NGinX, PostgresSQL, Debian-Linux, Moodle, PHP, SSH, Heroku, Google Compute Engine, Git, Docker, Rancker]
+    tasks:
+      - descr: Online course implementation with Moodle (available HERE) and a forum web application for that course with Thredded (available HERE). Full repository HERE.
+        heres:
+          - https://gitlab.com/VanJFlorez/animal_modeling_ethics/tree/master/docs/4 LMS build
+          - https://gitlab.com/VanJFlorez/animal_modeling_ethics/blob/master/docs/3\%20Social\%20WebApp/CP\%20etica\%20animal\%20webApp.pdf
+          - https://gitlab.com/VanJFlorez/animal_modeling_ethics/
+  - name: Grupo Sepro
+    url: http://www.seprologistica.unal.edu.co/publicaciones
+    jobTitle: Software Developer
+    period: 
+      from: 2018-01-01
+      to: 2018-06-30
+    location:
+      country: Bogotá
+      remote: False
+    tools: [Python, Django, JavaScript, ExpressJS, Gunicorn, Apache HTTP Server, Git, VSCode, MySQL, Heroku]
+    tasks:
+      - descr: Designed and implemented a survey information system that computes statistics and measurements. This survey system was used to evaluate the behavior and performance of Avocado and Sugar Cane derivatives supply chains from Cauca to Bogota.
+      - descr: Coordinated a team of 3 undergraduate students to achieve the project goals. Two of them worked in software development and the another one work in QA. Available HERE.
+        heres:
+          - https://gitlab.com/VanJFlorez/sepro-webapp
+education:
+  - name: Universidad Nacional de Colombia
+    degree: Bs. Computer Science
+    period:
+      from: 2016-01-01
+      to: 2023-04-10
+    location:
+      city: Bogotá
+    gpa:
+      my: 4.3
+      over: 5.0
+pprojects:
+  - name: NeatPosts
+    descr: Markdown with LaTex typesetted mathematics to HTML academic style paper converter.
+    url: https://github.com/jcammmmm/neatposts
+    demos: 
+      - url: https://jcamilo.co/posts/neatposts
+        comment: >
+          An example on how can you present your information clearly and in an easy to 
+          follow way without to mess your readers.
+  - name: STL Renderer
+    descr: A WebGL application that parses and renders STL files in HTML5 canvas.
+    url: https://github.com/jcammmmm/stl-reader
+    demos: 
+      - url: https://jcamilo.co/stl-reader/index.html?shape=barz
+        comment: > 
+          This is a live example showing a 3D visualization of my 2021 commit history in Github. Move the mouse 
+          while keeping the left click pressed to move the shape. Press Control key while scrolling to zoom in or 
+          out. Scroll to position the shape vertically. Scroll and Shift key to position the shape horizontally. 
+      - url: https://jcamilo.co/stl-reader/index.html?shape=teap
+        comment: >          
+          The standard teapot test model. Move the mouse while keeping the left click pressed to move the shape. Press 
+          Control key while scrolling to zoom in or out. Scroll to position the shape vertically. Scroll and Shift key 
+          to position the shape horizontally. 
+      - url: https://jcamilo.co/stl-reader/index.html?shape=cube
+        comment: >
+          A simple cube in 3D. Note how the optical illution works! Move the mouse while keeping the left click 
+          pressed to move the shape. Press Control key while scrolling to zoom in or out. Scroll to position the shape 
+          vertically. Scroll and Shift key to position the shape horizontally. 
+  - name: Multiform CV
+    descr: A meta CV data format and generator to output your CV in other formats (responsive html, tex, json5, yaml, txt).
+    url: https://github.com/jcammmmm/multiform-cv
+    demos:
+      - url: https://jcamilo.co/cv.pdf
+        comment: >
+          This PDF file and the current web page have the same content. Due to PDF format limitations, some 
+          content was cropped. The most complete version of this CV can be found in the YAML format. 
+      - url: https://jcamilo.co/cv.yml
+        comment: >
+          This file contains the data in YAML format that is used to fill out the templates that generate the PDF, 
+          HTML, TeX and other formats that can be used to spread your CV.
+      - url: https://jcamilo.co/cv.mob.html
+        comment: > 
+          The mobile version of this website. 
+  - name: Semi-infinite Programming with SQP
+    descr: Numerical solution of Chebyshev function approximation problems as a semi-infinite problem solved with SQP method.
+    url: https://jcamilo.co/posts/chebyshev/index.html
+    demos: 
+      - url: https://jcamilo.co/posts/chebyshev/index.html
+        comment: >
+          In this document a Chebyshev's approximation to a real valued function is performed through a 
+          semi-infinite programming problem. This reformulation uses the software tools available for 
+          optimization problems to compute the approximation. In particular, the computer program employed 
+          to execute the optimization task relies heavily in Sequential Quadratic Programming (SQP) method. 
+          In order to made this document self-contained, the definitions and techniques that composes the 
+          SQP method are described. In the first section, the problem restatement into semi-infinite programming 
+          terms is detailed, and some problem examples are portrayed. The following section describes the 
+          SQP techniques and core concepts that makes the method. In the final section, the sample problems 
+          shown are computed.
+  - name: Java2Python transpiler
+    descr: ANTLR based tool that transpiles Java code to Python3 code.
+    url: https://github.com/jcammmmm/JavaToPythonTranspiler
+  - name: K8s tools
+    descr: Script that ease the process of docker image building and release to public repositories.
+    url: https://github.com/jcammmmm/k8stools
+  - name: Criptography Algorithms
+    descr: Collection of criptography algorithms, mostly ciphers.
+    url: https://github.com/jcammmmm/cryptographyAlgorithms
+  - name: More on github
+    descr: There are more personal projects available on github, but are not longer mantained.
+    url: https://github.com/jcammmmm?tab=repositories
+socialnetworks:
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/vanjflores/
+    username: VanJFlorez
+  - name: GitHub
+    url: https://github.com/jcammmmm
+    username: VanJFlorez
+  - name: GitLab
+    url: https://gitlab.com/VanJFlorez
+    username: VanJFlorez
+certs:
+  - name: B2 English Certification (IELTS)
+    url: https://jcamilo.co/IELTS-2022.pdf
+  - name: C1 English Certification (EF)
+    url: https://www.efset.org/cert/j8ebfw
+  - name: Machine Learning with Big Data
+    url: https://www.coursera.org/account/accomplishments/certificate/8MS64GGYWDT5?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate
+  - name: Convolutional Neural Networks
+    url: https://www.coursera.org/account/accomplishments/certificate/KFN2XJC2KP92?utm_medium=certificate&utm_source=link&utm_campaign=copybutton_certificate
+  - name: Automate Stuff with Python
+    url: https://www.udemy.com/certificate/UC-ZHLLMBQA
+  - name: Econometrics (University)
+  - name: Micro and Macroeconomics (University)
+  - name: Economic History (University)
+skills:
+  programmingLanguages:
+    - Java 
+    - C /++ 
+    - Javascript
+    - TypeScript
+    - SQL
+    - CSS
+    - Python
+    - Ruby
+    - Bash
+    - Batch
+  frameworks:
+    - Spring Boot
+    - Quarkus 
+    - RubyOnRails 
+    - Django 
+    - EJB JSF JPA (Hibernate) PrimeFaces  
+    - React/Material-UI 
+    - Bootstrap 
+    - Android SDK 
+    - NumPy 
+    - Scikit-Learn 
+    - Pandas  
+    - Boost C++ 
+    - KNIME 
+    - Spark
+  toolsProtocols:
+    - Git 
+    - Kubernetes 
+    - Azure 
+    - Docker 
+    - ElasticSearch 
+    - Jaeger 
+    - OpenShift  
+    - Azure DevOps 
+    - Apache Flink  
+    - Apache Kafka 
+    - Apache Flume 
+    - Apache Camel 
+    - JUnit 
+    - JMS 
+    - Mockito 
+    - Visual Studio  
+    - Tensorflow 
+    - SOAP UI 
+    - GNU-Linux 
+    - MongoDB 
+    - Oracle Database 11g  
+    - SQLite 
+    - PostgreSQL 
+    - MySQL 
+    - Power Designer 
+    - Virtual Box 
+    - Linux Servers 
+    - Audacity   
+    - Moodle 
+    - Maven  
+    - Gradle 
+    - SSH clients 
+    - Heroku  
+    - Jenkins 
+    - Google Compute Engine 
+    - TortoiseSVN 
+    - \LaTeX
+  archMetodologies:
+    - Microservices 
+    - REST 
+    - Web Services 
+    - SOAP 
+    - DevOps (Azure) 
+    - Pipelining 
+    - Scrum 
+    - Good Practices (SOLID, Modularity, Design Patterns)
+abouts:
+  - In the same extent that I enjoy writting code, I also enjoy reading code, in my opinion this allows me to learn quickly and to be agile. I am constantly concerned with high quality deliverables, because they define my commitment and personality. I always listen my team opinions, for that reason I can adapt my objectives with easeness. As a member of an organization, my compasses are team goals and measurements. Finally, as a person who knows that high quality software is built with collaboration and teamwork, I enjoy to listen and to share ideas!
+  - I'm searching for new technology and engineering challenges, that takes to another level my abilities to create software easy to use and clean to deploy.
+
+
+
+

@@ -22,6 +22,14 @@ def main():
   pproject = args.only_this
   if (pproject):
     deploy_project_assets(pproject)
+
+  generate_index()
+
+"""
+The index of this shelving website is generated
+"""
+def generate_index():
+  pass
     
 def deploy_project_assets(pproject):
   pprojpath = Path(PPROJ_ORIGN)/pproject
@@ -74,7 +82,8 @@ def clone_pprojects(pprojects):
    pass
 
 class PProject:
-  def __init__(self, name, descr, assets):
+  def __init__(self, id, name, descr, assets):
+    self.id = id
     self.name = name
     self.descr = descr
     self.assets = assets
@@ -95,13 +104,14 @@ class PProject:
     return pproj
   
   def build_pproject_tree(jsondescriptor):
-    root = PProject('rootproject', 'this is a root project that points to other projects', [])
+    root = PProject('root', 'rootproject', 'this is a root project that points to other projects', [])
     pprojdescriptor = open(jsondescriptor, 'r', encoding='utf-8').read()
     pprojects = json.loads(pprojdescriptor).get('pprojects')
 
     def parse_pprojects(parent, jsonpprojects):
         for pproj in jsonpprojects: 
           ppj = PProject(
+            id=pproj.get('id'),
             name=pproj.get('name'),
             descr=pproj.get('descr'),
             assets=pproj.get('assets'),
