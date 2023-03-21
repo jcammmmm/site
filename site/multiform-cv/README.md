@@ -17,8 +17,8 @@
 8. output in ../cv folder
 
 # About
-Python script that generate Juan Camilo's CV in several template formats    
-but with the same content.
+Python script that generates a CV in several formats with the same content
+from a YAML descriptor file.
 The formats are:
     - LaTeX
     - HTML for desktop browsers

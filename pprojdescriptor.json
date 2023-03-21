@@ -3,11 +3,22 @@
     {
       "id": "cv",
       "name": "multiform-cv",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "descr": "Python script that generates a CV in several formats with the same content from a YAML descriptor file.",
       "assets": [
         "README.md",
         "cv"
-      ]
+      ],
+      "repourl": "https://github.com/jcammmmm/multiform-cv"
+    },
+    {
+      "id": "stlreader",
+      "name": "stl-reader",
+      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "assets": [
+        "index.html"
+      ],
+      "repourl": "https://github.com/jcammmmm/stl-reader",
+      "cloneComplete": true
     },
     {
       "id": "utils",
@@ -31,14 +42,6 @@
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       "assets": [
         "chebyshev.md"
-      ]
-    },
-    {
-      "id": "stlreader",
-      "name": "stl-reader",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      "assets": [
-        "README.md"
       ]
     },
     {
