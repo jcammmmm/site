@@ -5,8 +5,8 @@
       "name": "multiform-cv",
       "descr": "Python script that generates a CV in several formats with the same content from a YAML descriptor file.",
       "assets": [
-        "README.md",
-        "cv"
+        { "src": "README.md",   "dst": "README.md"},
+        { "src": "cv",          "dst": "cv"}
       ],
       "repourl": "https://github.com/jcammmmm/multiform-cv"
     },
@@ -15,7 +15,7 @@
       "name": "stl-reader",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       "assets": [
-        "index.html"
+        { "lnk": "ALL" }
       ],
       "repourl": "https://github.com/jcammmmm/stl-reader",
       "cloneComplete": true
@@ -25,7 +25,7 @@
       "name": "utils",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       "assets": [
-        "README.md"
+        { "src": "README.md",   "dst": "README.md"}
       ]
     },
     {
@@ -33,7 +33,7 @@
       "name": "neatposts",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       "assets": [
-        "README.md"
+        { "src": "README.md",   "dst": "README.md"}
       ]
     },
     {
@@ -41,7 +41,8 @@
       "name": "semiinfinite-programming-chebyshev",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       "assets": [
-        "chebyshev.md"
+        { "src": "chebyshev.md",   "dst": "chebyshev.md"}
+        
       ]
     },
     {
@@ -49,7 +50,7 @@
       "name": "thocsments",
       "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
       "assets": [
-        "README.md"
+        { "src": "README.md",   "dst": "README.md"}
       ],
       "pprojects": [
         {
@@ -57,7 +58,7 @@
           "name": "an-intro-to-oop",
           "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
           "assets": [
-            "an-intro-to-oop.md"
+            { "src": "README.md",   "dst": "README.md"}
           ]
         },
         {
@@ -65,7 +66,7 @@
           "name": "an-intro-to-programming",
           "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
           "assets": [
-            "an-intro-to-programming.md"
+            { "src": "README.md",   "dst": "README.md"}
           ],
           "pprojects": [
             {
@@ -73,7 +74,7 @@
               "name": "collatz-conjecture",
               "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
               "assets": [
-                "an-intro-to-oop.md"
+                { "src": "README.md",   "dst": "README.md"}
               ]
             }
           ]

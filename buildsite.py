@@ -4,21 +4,20 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
+from enum import Enum
 
 def main():
+  print('Due to Simlink creation privileges. RUN THIS SCRIPT IN AN ELEVATED SHELL')
   parser = argparse.ArgumentParser(description='Generate personal website shelving. Available: ' + str(PPROJ_DESCR))
   parser.add_argument('--check-clone', action='store_true',
                       help='Mostly used the first time. Check if shelv projects should be cloned.')
   parser.add_argument('--only-this', 
                       help='Only checks for updates for this project')
   args = parser.parse_args()
-  if (args.check_clone):
-    pproj_clone = PPROJ_DESCR.get_clone_list()
-    clone_pprojects(pproj_clone)
-    return
-  pproject = args.only_this
-  if (pproject):
-    deploy_project_assets(pproject)
+ 
+  pprojname = args.only_this
+  if (pprojname):
+    deploy_project_assets(pprojname)
   generate_index()
 
 """
@@ -26,23 +25,46 @@ The index of this shelving website is generated
 """
 def generate_index():
   pass
-    
-def deploy_project_assets(pproject):
-  pprojpath = Path(PPROJ_ORIGN)/pproject
-  assets = PPROJ_DESCR.get(pproject).assets
-  if not (PPROJ_DPLOY/pproject).exists():
-    os.makedirs(PPROJ_DPLOY/pproject)
 
-  for a in assets:
-    src = pprojpath/a
-    dst = PPROJ_DPLOY/pproject/a
-    if (src).is_file():
-      shutil.copy(src, dst)
+"""
+Parameters
+----------
+pprojname : str 
+  project's name to deploy
+"""  
+def deploy_project_assets(pprojname):
+  pproject = PPROJ_DESCR.get(pprojname)
+  clone_pprojects(pproject)
+
+  pprojpath = Path(PPROJ_ORIGN)/pprojname
+  deploypath = PPROJ_DPLOY/pproject.id
+  if not (deploypath).exists():
+    os.makedirs(deploypath)
+
+  for a in pproject.assets:
+    src = pprojpath/a.src
+    dst = deploypath
+    if a.action is AssetAction.COPY:
+      dst /= a.dst
+      if src.is_file():
+        shutil.copy(src, dst)
+      else:
+        try:
+          shutil.copytree(src, dst, dirs_exist_ok=True)
+        except FileNotFoundError:
+          print('"{}" does not exist in "{}" folder'.format(src, pprojname))
+    elif a.action is AssetAction.LINK:
+      if a.src == 'ALL':
+        os.rmdir(deploypath.resolve())
+        os.symlink(pprojpath.resolve(), pproject.id, target_is_directory=True)
+        return
+      else:
+        os.symlink(src.resolve(), 'tmpname.html', target_is_directory=src.is_dir()) # resolve is relative to cwd
+        shutil.move('tmpname.html', dst)
+        # os.rename('tmpname.html', a.src) # TODO
     else:
-      try:
-        shutil.copytree(src, dst, dirs_exist_ok=True)
-      except FileNotFoundError:
-        print('"{}" does not exist in "{}" folder'.format(src, pproject))
+      raise Error('UNKNOWN ACTION {}! !'.format(a.action))
+      
       
 
 """
@@ -55,40 +77,20 @@ def parse_project_descriptor():
   return json.loads(descr).get('pprojects')
 
 """
-If the folder name exists within the pproject list of the current
-pprojects tree, it means that the folder can be served in some way
-and the project can be published also.
-
-Return
-------
-list:
-  a list of projects that are not cloned.
-"""
-# REMOVE THIS
-def check_if_projects_were_cloned():
-  to_clone = []
-  os.chdir(PPROJ_ORIGN)
-  for p in os.listdir():
-    # print('#> ' + str(PPROJ_DESCR.pprojects))
-    if p not in PPROJ_DESCR.pprojects:
-      to_clone.append(p)
-  return to_clone;  
-
-"""
 Parameters
 ----------
 pprojects:
   list of projects to clone
 
 """
-def clone_pprojects(pprojects_clone):
-  for p in pprojects_clone:
-    ppath = Path(PPROJ_ORIGN)/p
-    if ppath.exists():
-      subprocess.run('git status', cwd=ppath)
-    else:
-      pproject = PPROJ_DESCR.get(p)
-      subprocess.run('git clone {0}'.format(pproject.repourl), cwd=PPROJ_ORIGN)
+def clone_pprojects(pproject):
+  ppath = Path(PPROJ_ORIGN)/pproject.name
+  if ppath.exists():
+    print('Running git pull .. .')
+    # subprocess.run('git pull', cwd=ppath)
+  else:
+    print('Running git clone .. .')
+    subprocess.run('git clone {0}'.format(pproject.repourl), cwd=PPROJ_ORIGN)
 
 """
 Attributes
@@ -129,16 +131,6 @@ class PProject:
   def __repr__(self):
     return self.__str__()
   
-  def get_clone_list(self):
-    try:
-      for p in self.pprojects:
-        if p.clone_complete:
-          PProject.clone_list.append(p.name)
-        p.get_clone_list()
-    except AttributeError:
-      pass
-    return PProject.clone_list
-  
   def get(self, pprojname):
     pproj = None
     for p in self.pprojects:
@@ -146,6 +138,24 @@ class PProject:
         return p
       pproj = p.get(pprojname)
     return pproj
+
+  def parse_asset_actions(jsonassets):
+    assetactions = []
+    for aact in jsonassets:
+      if aact.get('lnk') == None:
+        adeploy = AssetDeploy(
+          src=aact.get('src'),
+          dst=aact.get('dst'),
+          action=AssetAction.COPY
+        )
+      else:
+        adeploy = AssetDeploy(
+          src=aact.get('lnk'),
+          dst=None,
+          action=AssetAction.LINK
+        )
+      assetactions.append(adeploy)
+    return assetactions
   
   def build_pproject_tree(jsondescriptor):
     root = PProject(
@@ -159,22 +169,52 @@ class PProject:
     pprojects = json.loads(pprojdescriptor).get('pprojects')
 
     def parse_pprojects(parent, jsonpprojects):
-        for pproj in jsonpprojects: 
-          ppj = PProject(
-            id=pproj.get('id'),
-            name=pproj.get('name'),
-            descr=pproj.get('descr'),
-            assets=pproj.get('assets'),
-            repourl=pproj.get('repourl'),
-            clone_complete=True if pproj.get('cloneComplete') else None
-          )
-          parent.pprojects.append(ppj)
-          ppjchildren = pproj.get('pprojects')
-          if ppjchildren != None:
-            parse_pprojects(ppj, ppjchildren)
+      for pproj in jsonpprojects: 
+        ppj = PProject(
+          id=pproj.get('id'),
+          name=pproj.get('name'),
+          descr=pproj.get('descr'),
+          assets=PProject.parse_asset_actions(pproj.get('assets')),
+          repourl=pproj.get('repourl'),
+          clone_complete=True if pproj.get('cloneComplete') else None
+        )
+        parent.pprojects.append(ppj)
+        ppjchildren = pproj.get('pprojects')
+        if ppjchildren != None:
+          parse_pprojects(ppj, ppjchildren)
       
     parse_pprojects(root, pprojects)
     return root
+
+"""
+Enum to represent the action to do with an asset: copy or link
+"""
+class AssetAction(Enum):
+  COPY = 1
+  LINK = 2
+
+"""
+Describes how the action should be performed. 
+If COPY is specified, then de src file must be copyed to dst.
+If LINK is specified, then de src file must be linked.
+"""
+class AssetDeploy:
+  def __init__(self, src, dst, action):
+    self.src = src
+    self.dst = dst
+    self.action = action
+
+  def __str__(self):
+    if self.action is AssetAction.COPY:
+      return 'COPY {} to {}'.format(self.src, self.dst)
+    elif self.action is AssetAction.LINK:
+      return 'LINK to {}'.format(self.src)
+    else:
+      raise Error('UNKNOWN ACTION')
+
+  def __repr__(self):
+    return self.__str__()
+
 
 """
 Utility class employed to serialize the PProject object. Converts the 
