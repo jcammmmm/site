@@ -34,8 +34,24 @@ pprojname : str
 """  
 def deploy_project_assets(pprojname):
   pproject = PPROJ_DESCR.get(pprojname)
-  clone_pprojects(pproject)
+  if pproject == None:
+    print('ERROR: There is no project called {}'.format(pprojname))
+    
 
+  if pproject.linkall:
+    link_assets(pproject)
+
+
+      
+def link_assets(pproject):
+  clone_pprojects(pproject)
+  pprojpath = Path(PPROJ_ORIGN)/pproject.name
+  deploypath = PPROJ_DPLOY/pproject.id
+  if not Path(pproject.id).is_symlink():
+    print('INFO: Linking local copy of {} repository to deploy folder at {}'.format(pproject.name, PPROJ_DPLOY))
+    os.symlink(pprojpath, pproject.id, target_is_directory=True)
+
+def copy_assets():
   pprojpath = Path(PPROJ_ORIGN)/pprojname
   deploypath = PPROJ_DPLOY/pproject.id
   if not (deploypath).exists():
@@ -54,19 +70,12 @@ def deploy_project_assets(pprojname):
         except FileNotFoundError:
           print('"{}" does not exist in "{}" folder'.format(src, pprojname))
     elif a.action is AssetAction.LINK:
-      if a.src == 'ALL':
-        os.rmdir(deploypath.resolve())
-        os.symlink(pprojpath.resolve(), pproject.id, target_is_directory=True)
-        return
-      else:
-        os.symlink(src.resolve(), 'tmpname.html', target_is_directory=src.is_dir()) # resolve is relative to cwd
-        shutil.move('tmpname.html', dst)
-        # os.rename('tmpname.html', a.src) # TODO
+      os.symlink(src.resolve(), 'tmpname.html', target_is_directory=src.is_dir()) # resolve is relative to cwd
+      shutil.move('tmpname.html', dst)
+      # os.rename('tmpname.html', a.src) # TODO
     else:
       raise Error('UNKNOWN ACTION {}! !'.format(a.action))
-      
-      
-
+  
 """
 Reads the pprojdescriptor.json file in order to retrieve information about the main
 relevant paths etc. See the file fore more details.
@@ -110,20 +119,20 @@ pprojects: list: PProject
   The child projects related to this project. They are not dependencies,
   the often are specialization on the main topic or a series of posts
   on the same topic.
-clone_complete: boolean
+linkall: boolean
   Flag if that project should be cloned also on the webserver.
 """
 class PProject:
   clone_list = []
 
-  def __init__(self, id, name, descr, assets, repourl, clone_complete):
+  def __init__(self, id, name, descr, assets, repourl, linkall):
     self.id = id
     self.name = name
     self.descr = descr
     self.assets = assets
     self.pprojects = []
     self.repourl = repourl
-    self.clone_complete = clone_complete
+    self.linkall = linkall
 
   def __str__(self):
     return str(self.__dict__)
@@ -140,6 +149,8 @@ class PProject:
     return pproj
 
   def parse_asset_actions(jsonassets):
+    if jsonassets == None:
+      return None
     assetactions = []
     for aact in jsonassets:
       if aact.get('lnk') == None:
@@ -176,7 +187,7 @@ class PProject:
           descr=pproj.get('descr'),
           assets=PProject.parse_asset_actions(pproj.get('assets')),
           repourl=pproj.get('repourl'),
-          clone_complete=True if pproj.get('cloneComplete') else None
+          linkall=True if pproj.get('linkall') else None
         )
         parent.pprojects.append(ppj)
         ppjchildren = pproj.get('pprojects')
@@ -224,10 +235,10 @@ related pprojects.
 """
 class PProjectEncoder(json.JSONEncoder):
   def default(self, o):
-    clone_complete = o.__dict__['clone_complete']
-    del o.__dict__['clone_complete']
-    if clone_complete == True:
-      o.__dict__['cloneComplete'] = True
+    linkall = o.__dict__['linkall']
+    del o.__dict__['linkall']
+    if linkall == True:
+      o.__dict__['linkall'] = True
 
     url = o.__dict__['url']
     del o.__dict__['url']
