@@ -42,7 +42,15 @@ def deploy_project_assets(pprojname):
     link_assets(pproject)
 
 
-      
+"""
+Clones the pproject if the repository does not exist, otherwise pull any changes from 
+the remote. Then makesa soft link to that repository.
+
+Parameters
+----------
+pproject: PProject
+  The pproject to link
+"""
 def link_assets(pproject):
   clone_pprojects(pproject)
   pprojpath = Path(PPROJ_ORIGN)/pproject.name
@@ -91,6 +99,9 @@ Parameters
 pprojects:
   list of projects to clone
 
+Notes
+-----
+The command must be passed as an array of strings in Python < 3.11.2
 """
 def clone_pprojects(pproject):
   ppath = Path(PPROJ_ORIGN)/pproject.name
@@ -99,7 +110,7 @@ def clone_pprojects(pproject):
     # subprocess.run('git pull', cwd=ppath)
   else:
     print('Running git clone .. .')
-    subprocess.run('git clone {0}'.format(pproject.repourl), cwd=PPROJ_ORIGN)
+    subprocess.run('git clone {0}'.format(pproject.repourl).split(' '), cwd=PPROJ_ORIGN)
 
 """
 Attributes
