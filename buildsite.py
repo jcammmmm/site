@@ -3,6 +3,7 @@ import argparse
 import json
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from enum import Enum
 
@@ -24,7 +25,17 @@ def main():
 The index of this shelving website is generated
 """
 def generate_index():
-  pass
+  for pproj in PProject.as_list:
+    print(pproj.name)
+  body = ET.Element('body')
+  h1 = ET.SubElement(body, 'h1')
+  h1.text = 'Contents'
+  h1.attrib = {'class': 'echo'}
+
+  h2 = ET.SubElement(body, 'h2')
+  h2.text = 'Item A'
+  ET.indent(body)
+  ET.dump(body)
 
 """
 Parameters
@@ -36,7 +47,7 @@ def deploy_project_assets(pprojname):
   pproject = PPROJ_DESCR.get(pprojname)
   if pproject == None:
     print('ERROR: There is no project called {}'.format(pprojname))
-    
+    return 
 
   if pproject.linkall:
     link_assets(pproject)
@@ -110,7 +121,7 @@ def clone_pprojects(pproject):
     # subprocess.run('git pull', cwd=ppath)
   else:
     print('Running git clone .. .')
-    subprocess.run('git clone {0}'.format(pproject.repourl).split(' '), cwd=PPROJ_ORIGN)
+    subprocess.run('git clone {0} {1}'.format(pproject.repourl, pproject.name).split(' '), cwd=PPROJ_ORIGN)
 
 """
 Attributes
@@ -134,7 +145,7 @@ linkall: boolean
   Flag if that project should be cloned also on the webserver.
 """
 class PProject:
-  clone_list = []
+  as_list = []
 
   def __init__(self, id, name, descr, assets, repourl, linkall):
     self.id = id
@@ -202,6 +213,8 @@ class PProject:
         )
         parent.pprojects.append(ppj)
         ppjchildren = pproj.get('pprojects')
+
+        PProject.as_list.append(ppj)
         if ppjchildren != None:
           parse_pprojects(ppj, ppjchildren)
       

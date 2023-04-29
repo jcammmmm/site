@@ -1,53 +1,50 @@
 {
   "pprojects": [
     {
-      "id": "cv",
+      "id": "multiformcv",
       "name": "multiform-cv",
-      "descr": "Python script that generates a CV in several formats with the same content from a YAML descriptor file.",
+      "descr": "Python script that generates a CV in TeX, PDF and HTML with the same content from a YAML descriptor file.",
       "repourl": "https://github.com/jcammmmm/multiform-cv",
       "linkall": true
     },
     {
       "id": "stlreader",
       "name": "stl-reader",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "descr": "Parse and render STL (STereoLithography) 3D model description files on web browser with WebGL.",
       "repourl": "https://github.com/jcammmmm/stl-reader",
       "linkall": true
     },
     {
       "id": "utils",
       "name": "utils",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+      "descr": "Collection of useful commands, setups and troubleshoots for programming languages and a wide variety of software.",
+      "repourl": "https://github.com/jcammmmm/utils",
       "linkall": true
     },
     {
       "id": "neatposts",
       "name": "neatposts",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      "assets": [
-        { "src": "README.md",   "dst": "README.md"}
-      ]
+      "repourl": "https://github.com/jcammmmm/neatposts",
+      "descr": "This python module will transform your markdown documents that contains mathematics into neat html.",
+      "linkall": true
     },
     {
       "id": "chebyshev",
       "name": "semiinfinite-programming-chebyshev",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      "assets": [
-        { "src": "chebyshev.md",   "dst": "chebyshev.md"}
-      ]
+      "descr": "MATLAB scripts that compute function approximations with Chebyshev approximation and Semi-Infinite programming.",
+      "repourl": "https://github.com/jcammmmm/semi-infinite-programming-chebyshev",
+      "linkall": true
     },
     {
       "id": "thocs",
-      "name": "thocsments",
-      "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
-      "assets": [
-        { "src": "README.md",   "dst": "README.md"}
-      ],
+      "name": "thocments",
+      "descr": "A collection of personal blog posts.",
+      "linkall": true,
       "pprojects": [
         {
           "id": "introoop",
           "name": "an-intro-to-oop",
-          "descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et",
+          "descr": "Another perspective on the understanding of Object Oriented Programing beyong objects.",
           "assets": [
             { "src": "README.md",   "dst": "README.md"}
           ]
